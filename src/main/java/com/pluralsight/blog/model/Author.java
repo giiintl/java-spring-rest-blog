@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Entity
 public class Author {
     @OneToMany
-    List<Post>  posts;
+    private List<Post>  posts;
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class Author {
 
     public Author() {
         super();
-        posts=new ArrayList();
+        posts=new ArrayList<>();
     }
 
     public Author(String username, String firstname, String lastname, String password) {
